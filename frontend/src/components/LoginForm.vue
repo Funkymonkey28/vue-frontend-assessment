@@ -21,6 +21,9 @@ export default defineComponent({
 
     <label>Password:</label>
     <input type='password' v-model='password' required>
+    <div class='submit'>
+      <button>Login</button>
+    </div>
   </form>
 </template>
 
@@ -50,5 +53,16 @@ export default defineComponent({
     border: none;
     border-bottom: 1px solid #ddd;
     color: #555;
+  }
+  button{
+    background: #646cff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+  }
+  .submit{
+    text-align: center;
   }
 </style>

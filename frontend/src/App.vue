@@ -26,10 +26,12 @@ export default defineComponent({
         Welcome brave soul... to the world of Vue.js
       </h2>
       <WebsiteLoginForm />
+      <!--
       <p>
         In this challenge, you will need to implement a simple login page. I have full
         confidence that you'll be able to succeed in this task and look forward to seeing your submission.
       </p>
+      -->
       <h3>
         Link to challenge:
         <a
@@ -55,7 +57,9 @@ export default defineComponent({
   }
 
   .home-body {
-    height: calc(50vh);
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
     border-radius: 0.5rem;
     background-color: #f5f5f5;
