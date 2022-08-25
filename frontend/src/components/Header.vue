@@ -12,7 +12,7 @@ export default defineComponent ({
     changeText: {
       type: String,
       required: false,
-      default: 'Vue is Fun'
+      default: 'Vue is Mega Fun'
     },
   },
   data() {
@@ -24,9 +24,9 @@ export default defineComponent ({
 <template>
   <div class='header-container'>
     <a id='logo'>Pogjects</a>
-    <div>
+    <a>
       {{ changeText }}
-    </div>
+    </a>
   </div>
 </template>
 
