@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 export default defineComponent({
   name: 'LoginForm',
   props: { 
@@ -8,9 +9,30 @@ export default defineComponent({
   data(){
     return {
       email: '',
-      password: ''
+      password: '',
+      status: '',
+      message: '',
+    }
+  },
+  methods: {
+    async login() {
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: this.email,
+          password: this.password,
+        }),
+      });
+
+      const data = await response.json();
+      this.status = data.status;
+      this.message = data.message;
     }
   }
+
 });
 </script>
 
@@ -22,7 +44,7 @@ export default defineComponent({
     <label>Password:</label>
     <input type='password' v-model='password' required>
     <div class='submit'>
-      <button>Login</button>
+      <button @click='login'>Login</button>
     </div>
   </form>
 </template>
