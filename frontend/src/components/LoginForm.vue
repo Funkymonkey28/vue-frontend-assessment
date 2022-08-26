@@ -1,16 +1,27 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+import { ref } from 'vue'
+//import ModalWindow from '../components/Modal.vue'
 export default defineComponent({
   name: 'LoginForm',
+  components: {
+    
+  },
   props: { 
 
+  },
+  setup() {
+    const modalActive = ref(true);
+    const toggleModal = () => {
+      modalActive.value = ! modalActive.value;
+    };
+    return { modalActive };
   },
   data(){
     return {
       email: '',
       password: '',
-      status: '',
+      toggleModal: true,
       message: '',
     }
   },
@@ -26,10 +37,12 @@ export default defineComponent({
           password: this.password,
         }),
       });
-
-      const data = await response.json();
-      this.status = data.status;
-      this.message = data.message;
+      
+      //const data = await response.json();
+      //this.message = data.message;
+      //if(data.status == 200){
+      //  this.toggleModal = true;
+      //}
     }
   }
 
@@ -37,14 +50,25 @@ export default defineComponent({
 </script>
 
 <template>
-  <form>
+  <form id='formContainer'>
     <label>Email:</label>
-    <input type='email' v-model='email' required>
+    <input 
+      v-model='email' 
+      type='email' 
+      required
+    >
 
     <label>Password:</label>
-    <input type='password' v-model='password' required>
+    <input 
+      v-model='password' 
+      type='password'
+      required
+    >
+    
     <div class='submit'>
-      <button @click='login'>Login</button>
+      <button @click='login'>
+        Login
+      </button>
     </div>
   </form>
 </template>

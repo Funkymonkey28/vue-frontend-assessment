@@ -17,7 +17,7 @@ export default defineComponent ({
 
 <template>
   <div class='footer-container'>
-    <a>{{footerText}}</a>
+    <a> {{ footerText }} </a>
   </div>
 </template>
 
