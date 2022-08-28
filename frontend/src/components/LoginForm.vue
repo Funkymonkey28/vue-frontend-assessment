@@ -3,11 +3,12 @@ import { defineComponent } from 'vue'
 import { ref } from 'vue'
 //import ModalWindow from '../components/Modal.vue'
 import DropdownMenu from './DropdownMenu.vue'
-
+import ModalWindowCustom from './ModalWindow.vue';
 export default defineComponent({
   name: 'LoginForm',
   components: {
-    DropdownMenu
+    DropdownMenu,
+    ModalWindowCustom
   },
   props: { 
 
@@ -17,9 +18,9 @@ export default defineComponent({
     return {
       email: '',
       password: '',
-      toggleModal: true,
       message: '',
       dropdownResult: '',
+      modalVisible: false,
     }
   },
   methods: {
@@ -35,11 +36,20 @@ export default defineComponent({
         }),
       });
       
+      this.modalVisible = true;
+      //const data = await response.json();
+      //console.log(data.message);
+      //if(data.status == 200){
+      //  this.visible = true;
+      //}
     },
 
     optionUpdate: function(value) {
       console.log(value);
       this.dropdownResult = value;
+    },
+    modalToggle: function() {
+      this.modalVisible = !this.modalVisible;
     }
   }
 });
@@ -62,11 +72,38 @@ export default defineComponent({
     >
     
     <div class='submit'>
-      <button @click='login'>
+      <button @click='login();'>
         Login
       </button>
     </div>
     
+    <ModalWindowCustom
+      v-show='false'
+      @close='modalToggle'
+    >
+      <template #header>
+        Modal Header
+      </template>
+
+      <template #body>
+        You can put your contents within body
+      </template>
+
+      <template #footer>
+        You can put your footer here
+      </template>
+    </ModalWindowCustom>
+
+    <div v-if='modalVisible'>
+      <div
+        class='modal-overlay'
+        @click='modalToggle'
+      />
+      <div class='modal-container'>
+        Successful
+      </div>
+    </div>
+
     <div>
       <p
         v-text='dropdownResult'
