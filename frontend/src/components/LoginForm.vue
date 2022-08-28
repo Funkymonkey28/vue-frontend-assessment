@@ -2,27 +2,24 @@
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 //import ModalWindow from '../components/Modal.vue'
+import DropdownMenu from './DropdownMenu.vue'
+
 export default defineComponent({
   name: 'LoginForm',
   components: {
-    
+    DropdownMenu
   },
   props: { 
 
   },
-  setup() {
-    const modalActive = ref(true);
-    const toggleModal = () => {
-      modalActive.value = ! modalActive.value;
-    };
-    return { modalActive };
-  },
+  
   data(){
     return {
       email: '',
       password: '',
       toggleModal: true,
       message: '',
+      dropdownResult: '',
     }
   },
   methods: {
@@ -38,11 +35,11 @@ export default defineComponent({
         }),
       });
       
-      //const data = await response.json();
-      //this.message = data.message;
-      //if(data.status == 200){
-      //  this.toggleModal = true;
-      //}
+    },
+
+    optionUpdate: function(value) {
+      console.log(value);
+      this.dropdownResult = value;
     }
   }
 });
@@ -68,6 +65,13 @@ export default defineComponent({
       <button @click='login'>
         Login
       </button>
+    </div>
+    
+    <div>
+      <p
+        v-text='dropdownResult'
+      />
+      <DropdownMenu @update:option='optionUpdate' />
     </div>
   </form>
 </template>
