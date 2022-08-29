@@ -67,7 +67,9 @@ export default defineComponent({
     >
       
     <div class='submit'>
-      <button @click='login();'
+      <button 
+        type='button'
+        @click='login'
       >
         Login
       </button>
