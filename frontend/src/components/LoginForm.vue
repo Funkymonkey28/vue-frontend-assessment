@@ -34,13 +34,10 @@ export default defineComponent({
           password: this.password,
         }),
       });
-        
+      
+      const data = await response.json();
+      this.message = data.message;
       this.modalVisible = true;
-      //const data = await response.json();
-      //console.log(data.message);
-      //if(data.status == 200){
-      //  this.visible = true;
-      //}
     },
     optionUpdate: function(value) {
       console.log(value);
@@ -83,15 +80,11 @@ export default defineComponent({
       @close='modalToggle'
     >
       <template #header>
-        Modal Header
+        Login Notice
       </template>
   
       <template #body>
-        You can put your contents within body
-      </template>
-  
-      <template #footer>
-        You can put your footer here
+        {{ message }}
       </template>
     </ModalWindowCustom>
   

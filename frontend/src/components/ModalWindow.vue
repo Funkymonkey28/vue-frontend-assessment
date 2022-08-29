@@ -1,18 +1,20 @@
 <template>
   <transition name='modal-fade'>
-    <div class='modal-backdrop'>
+    <div 
+      class='modal-backdrop' @click='close'>
       <div
         class='modal'
         role='dialog'
         aria-labelledby='modalTitle'
         aria-describedby='modalDescription'
+        @click.stop
       >
         <header
           id='modalTitle'
           class='modal-header'
         >
           <slot name='header'>
-            Default Header
+            <!--Default Header-->
           </slot>
         </header>
 
@@ -21,13 +23,13 @@
           class='modal-body'
         >
           <slot name='body'>
-            Default body content
+            <!--Default body content-->
           </slot>
         </main>
 
         <footer class='modal-footer'>
           <slot name='footer'>
-            Default Footer!
+            <!--Default Footer!-->
           </slot>
           <button
             type='button'
@@ -35,7 +37,7 @@
             aria-label='Close Modal'
             @click='close'
           >
-            Close Modal
+            Close
           </button>
         </footer>
       </div>
@@ -73,7 +75,7 @@ export default {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  width: 80%;
+  width: 20%;
 }
 
 .modal-header,
