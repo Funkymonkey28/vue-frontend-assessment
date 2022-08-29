@@ -1,85 +1,88 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ref } from 'vue'
-//import ModalWindow from '../components/Modal.vue'
-import DropdownMenu from './DropdownMenu.vue'
 import ModalWindowCustom from './ModalWindow.vue';
 export default defineComponent({
   name: 'LoginForm',
   components: {
-    DropdownMenu,
     ModalWindowCustom
   },
-  props: { 
-
-  },
-  
-  data(){
+  data() {
     return {
-      email: '',
+      username: '',
       password: '',
-      message: '',
-      dropdownResult: '',
+      modalMessage: '',
       modalVisible: false,
-    }
+    };
   },
   methods: {
     async login() {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const res = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: this.email,
+          username: this.username,
           password: this.password,
         }),
       });
-      
+      const data = await res.json();
+      this.modalMessage = data.message;
       this.modalVisible = true;
-      //const data = await response.json();
-      //console.log(data.message);
-      //if(data.status == 200){
-      //  this.visible = true;
-      //}
     },
-
-    optionUpdate: function(value) {
-      console.log(value);
-      this.dropdownResult = value;
-    },
-    modalToggle: function() {
+    toggleModal() {
       this.modalVisible = !this.modalVisible;
     }
-  }
+  },
 });
 </script>
-
+  
 <template>
-  <form id='formContainer'>
-    <label>Email:</label>
-    <input 
-      v-model='email' 
-      type='email' 
-      required
-    >
-
-    <label>Password:</label>
-    <input 
-      v-model='password' 
-      type='password'
-      required
-    >
-    
-    <div class='submit'>
-      <button @click='login();'>
-        Login
-      </button>
-    </div>
-    
+  <div class='flex justify-center mt-12'>
+    <form class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-2/6'>
+      <div>
+        <label
+          class='block'
+          for='username'
+        >
+          Username
+        </label>
+        <input
+          id='username'
+          v-model='username'
+          class='border rounded my-2 py-2 px-3'
+          type='text'
+          placeholder='Username'
+        >
+      </div>
+      <div>
+        <label
+          class='block'
+          for='password'
+        >
+          Password
+        </label>
+        <input
+          id='password'
+          v-model='password'
+          class='border rounded my-2 py-2 px-3'
+          type='password'
+          placeholder='Password'
+        >
+      </div>
+      <div class='flex justify-center mt-5'>
+        <button
+          class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+          type='button'
+          @click='login'
+        >
+          Login
+        </button>
+      </div>
+    </form>
     <ModalWindowCustom
-      v-show='false'
-      @close='modalToggle'
+      v-show='modalVisible'
+      @close='toggleModal'
     >
       <template #header>
         Modal Header
@@ -93,62 +96,5 @@ export default defineComponent({
         You can put your footer here
       </template>
     </ModalWindowCustom>
-
-    <div v-if='modalVisible'>
-      <div
-        class='modal-overlay'
-        @click='modalToggle'
-      />
-      <div class='modal-container'>
-        Successful
-      </div>
-    </div>
-
-    <div>
-      <p
-        v-text='dropdownResult'
-      />
-      <DropdownMenu @update:option='optionUpdate' />
-    </div>
-  </form>
+  </div>
 </template>
-
-<style>
-  form{
-    max-width: 420px;
-    margin: 30px auto;
-    background: rgb(255, 255, 255);
-    text-align: left;
-    padding: 40px;
-    border-radius: 10px;
-  }
-  label{
-    color: #aaa;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 0.6em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-  }
-  input{
-    display: block;
-    padding: 10px 6px;
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    color: #555;
-  }
-  button{
-    background: #646cff;
-    border: 0;
-    padding: 10px 20px;
-    margin-top: 20px;
-    color: white;
-    border-radius: 20px;
-  }
-  .submit{
-    text-align: center;
-  }
-</style>
