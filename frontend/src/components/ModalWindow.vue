@@ -1,7 +1,9 @@
 <template>
   <transition name='modal-fade'>
     <div 
-      class='modal-backdrop' @click='close'>
+      class='modal-backdrop'
+      @click='close'
+    >
       <div
         class='modal'
         role='dialog'
