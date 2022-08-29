@@ -37,7 +37,9 @@ export default defineComponent({
       
       const data = await response.json();
       this.message = data.message;
-      this.modalVisible = true;
+      if(data.status == 200){
+        this.modalVisible = true;
+      }
     },
     optionUpdate: function(value) {
       console.log(value);
@@ -87,17 +89,7 @@ export default defineComponent({
         {{ message }}
       </template>
     </ModalWindowCustom>
-  
-    <div v-if='modalVisible'>
-      <div
-        class='modal-overlay'
-        @click='modalToggle'
-      />
-      <div class='modal-container'>
-        Successful
-      </div>
-    </div>
-  
+    
     <div>
       <p
         v-text='dropdownResult'
