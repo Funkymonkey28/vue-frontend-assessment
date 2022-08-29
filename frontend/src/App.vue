@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 import WebsiteHeader from './components/Header.vue'
 import WebsiteFooter from './components/Footer.vue'
-import WebsiteLoginForm from './components/LoginForm.vue'
+
 /**
  * App component. You are welcome to modify this file.
  */
@@ -10,7 +10,7 @@ export default defineComponent({
   components: {
     WebsiteHeader,
     WebsiteFooter,
-    WebsiteLoginForm
+
   },
   data() {
     return {};
@@ -19,32 +19,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <main>
-    <WebsiteHeader />
-    <div class='home-body'>
-      <h2>
-        Welcome brave soul... to the world of Vue.js
-      </h2>
-      <WebsiteLoginForm />
-      <!--
-      <p>
-        In this challenge, you will need to implement a simple login page. I have full
-        confidence that you'll be able to succeed in this task and look forward to seeing your submission.
-      </p>
-      -->
-      <h3>
-        Link to challenge:
-        <a
-          href='https://github.com/Darianlmj/projects-frontend-assessment'
-          target='_blank'
-        >
-          projects-frontend-assessment
-        </a>
-      </h3>
-    </div>
-    
-    <WebsiteFooter />
-  </main>
+  <WebsiteHeader />
+  <router-link to='/'>
+    Go to Home
+  </router-link>
+  <router-link to='/ProfilePage'>
+    Go to About
+  </router-link>
+  <WebsiteFooter />
 </template>
 
 <style scoped>
