@@ -37,9 +37,7 @@ export default defineComponent({
       
       const data = await response.json();
       this.message = data.message;
-      if(data.status == 200){
-        this.modalVisible = true;
-      }
+      this.modalVisible = true;
     },
     optionUpdate: function(value) {
       console.log(value);
@@ -69,34 +67,31 @@ export default defineComponent({
     >
       
     <div class='submit'>
-      <button 
-        type='button'
-        @click='login();'
+      <button @click='login();'
       >
         Login
       </button>
     </div>
-      
-    <ModalWindowCustom
-      v-show='modalVisible'
-      @close='modalToggle'
-    >
-      <template #header>
-        Login Notice
-      </template>
-  
-      <template #body>
-        {{ message }}
-      </template>
-    </ModalWindowCustom>
-    
-    <div>
-      <p
-        v-text='dropdownResult'
-      />
-      <DropdownMenu @update:option='optionUpdate' />
-    </div>
   </form>
+
+  <ModalWindowCustom
+    v-show='modalVisible'
+    @close='modalToggle'
+  >
+    <template #header>
+      Login Notice
+    </template>
+
+    <template #body>
+      {{ message }}
+    </template>
+  </ModalWindowCustom>
+  <div>
+    <p
+      v-text='dropdownResult'
+    />
+    <DropdownMenu @update:option='optionUpdate' />
+  </div>
 </template>
   
   <style>

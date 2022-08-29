@@ -1,5 +1,7 @@
 Bugs I encountered:
 - don't forget to put type='button' in button tags. Otherwise the button won't work properly
+	- Maybe not?? This conflicts with the incorrect input notification. Got rid of the type, and now both work? 
+		Perhaps the whole custom Modal needs to sit outside the form?
 - If using multiple click events, put a @click.stop after the outer most @click to stop it from effecting the 
     inner divs. Otherwise only the outermost @click works
 
