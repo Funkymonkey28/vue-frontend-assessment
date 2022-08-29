@@ -9,14 +9,13 @@
         role='dialog'
         aria-labelledby='modalTitle'
         aria-describedby='modalDescription'
-        @click.stop
       >
         <header
           id='modalTitle'
           class='modal-header'
         >
           <slot name='header'>
-            <!--Default Header-->
+            Default Header
           </slot>
         </header>
 
@@ -25,13 +24,13 @@
           class='modal-body'
         >
           <slot name='body'>
-            <!--Default body content-->
+            Default body content
           </slot>
         </main>
 
         <footer class='modal-footer'>
           <slot name='footer'>
-            <!--Default Footer!-->
+            Default Footer!
           </slot>
           <button
             type='button'
@@ -39,7 +38,7 @@
             aria-label='Close Modal'
             @click='close'
           >
-            Close
+            Close Modal
           </button>
         </footer>
       </div>
@@ -77,7 +76,7 @@ export default {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  width: 20%;
+  width: 80%;
 }
 
 .modal-header,
