@@ -38,6 +38,9 @@ export default defineComponent({
       const data = await response.json();
       this.message = data.message;
       this.modalVisible = true;
+      if (data.status == 200){
+        this.$emit('switchToProfile');
+      }
     },
     optionUpdate: function(value) {
       console.log(value);
@@ -45,7 +48,7 @@ export default defineComponent({
     },
     modalToggle: function() {
       this.modalVisible = !this.modalVisible;
-    }
+    },
   }
 });
 </script>
