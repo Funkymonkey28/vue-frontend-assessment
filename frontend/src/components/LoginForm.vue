@@ -1,14 +1,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
-//import ModalWindow from '../components/Modal.vue'
-import DropdownMenu from './DropdownMenu.vue'
 import ModalWindowCustom from './ModalWindow.vue';
 export default defineComponent({
   name: 'LoginForm',
   components: {
-    DropdownMenu,
-    ModalWindowCustom
+    ModalWindowCustom,
   },
   props: { 
   },
@@ -41,10 +38,6 @@ export default defineComponent({
       if (data.status == 200){
         this.$emit('switchToProfile');
       }
-    },
-    optionUpdate: function(value) {
-      console.log(value);
-      this.dropdownResult = value;
     },
     modalToggle: function() {
       this.modalVisible = !this.modalVisible;
@@ -91,12 +84,6 @@ export default defineComponent({
       {{ message }}
     </template>
   </ModalWindowCustom>
-  <div>
-    <p
-      v-text='dropdownResult'
-    />
-    <DropdownMenu @update:option='optionUpdate' />
-  </div>
 </template>
   
   <style>
