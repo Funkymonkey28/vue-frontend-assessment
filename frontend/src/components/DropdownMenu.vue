@@ -21,7 +21,7 @@
 <script lang='ts'>
 export default {
   name: 'DropdownMenu',
-
+  emits: [ 'update:option' ],
   data: function () {
     return {
       selectedOption: null,

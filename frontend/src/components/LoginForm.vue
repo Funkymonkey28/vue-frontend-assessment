@@ -7,9 +7,7 @@ export default defineComponent({
   components: {
     ModalWindowCustom,
   },
-  props: { 
-  },
-    
+  emits: [ 'switch-to-profile' ],    
   data(){
     return {
       email: '',
@@ -36,7 +34,7 @@ export default defineComponent({
       this.message = data.message;
       this.modalVisible = true;
       if (data.status == 200){
-        this.$emit('switchToProfile');
+        this.$emit('switch-to-profile');
       }
     },
     modalToggle: function() {

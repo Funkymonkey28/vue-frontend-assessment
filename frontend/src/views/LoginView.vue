@@ -3,12 +3,14 @@ import { defineComponent } from 'vue';
 import WebsiteLoginForm from '../components/LoginForm.vue'
 
 export default {
+  name: 'LoginView',
   components: {
     WebsiteLoginForm,
   },
+  emits: [ 'switch-to-profile' ],
   methods: {
     toggleView: function() {
-      this.$emit('switchToProfile');
+      this.$emit('switch-to-profile');
     }
   }
 }
@@ -21,7 +23,7 @@ export default {
         Welcome brave soul... to the world of Vue.js
       </h2>
       <WebsiteLoginForm 
-        @switchToProfile='toggleView'
+        @switch-to-profile='toggleView'
       />
       <h3>
         Link to challenge:

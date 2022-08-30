@@ -8,12 +8,13 @@ import { defineComponent } from 'vue'
 
 export default defineComponent ({
   name: 'ProfileView',
+  emits: [ 'switch-to-login' ],
   data() {
     return {};  
   },
   methods: {
-    switchToLogin: function() {
-      this.$emit('switchToLogin');
+    toggleView: function() {
+      this.$emit('switch-to-login');
     }
   }
 });
@@ -22,7 +23,7 @@ export default defineComponent ({
 <template>
   <h1>Profile Page</h1>
   <button 
-    @click='switchToLogin'
+    @click='toggleView'
   >
     Logout
   </button>

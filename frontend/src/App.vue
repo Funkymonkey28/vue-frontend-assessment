@@ -35,12 +35,12 @@ export default defineComponent({
     <div class='home-body'>
       <div v-if='loginVisible'>
         <LoginView 
-          @switchToProfile='toggleView'
+          @switch-to-profile='toggleView'
         />
       </div>
       <div v-if='profileVisible'>
         <ProfileView 
-          @switchToLogin='toggleView'
+          @switch-to-login='toggleView'
         />
       </div>
     </div>

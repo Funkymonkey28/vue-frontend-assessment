@@ -50,6 +50,7 @@
 <script lang='ts'>
 export default {
   name: 'ModalWindow',
+  emits: [ 'close' ],
   methods: {
     close() {
       this.$emit('close');

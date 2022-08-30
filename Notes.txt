@@ -4,6 +4,8 @@ Bugs I encountered:
 		Perhaps the whole custom Modal needs to sit outside the form?
 - If using multiple click events, put a @click.stop after the outer most @click to stop it from effecting the 
     inner divs. Otherwise only the outermost @click works
+- emits: [ 'switch-to-profile' ] <--- this needs to be included in the script to avoid the "event has been 
+	triggered but not decalred on 'emits' option" error
 
 vue setup
 - npm install vue
