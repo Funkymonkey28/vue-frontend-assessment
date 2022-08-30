@@ -10,13 +10,20 @@ export default defineComponent ({
   name: 'ProfileView',
   data() {
     return {};  
+  },
+  methods: {
+    switchToLogin: function() {
+      this.$emit('switchToLogin');
+    }
   }
 });
 </script>
 
 <template>
   <div class='header-container'> 
-    <h1>HELLO WORLD!!!</h1>
+    <h1>Profile Page</h1>
+    <button 
+      @click='switchToLogin'> Go back to Login</button>
   </div>
 </template>
 

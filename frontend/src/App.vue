@@ -3,7 +3,7 @@ import { defineComponent } from 'vue';
 import WebsiteHeader from './components/Header.vue'
 import WebsiteFooter from './components/Footer.vue'
 import WebsiteLoginForm from './components/LoginForm.vue'
-import ProfileView from './components/ProfileView.vue'
+import ProfileView from './views/ProfileView.vue'
 /**
  * App component. You are welcome to modify this file.
  */
@@ -31,7 +31,7 @@ export default defineComponent({
 
 <template>
   <main>
-    <WebsiteHeader />
+    <WebsiteHeader/>
     <div class='home-body'>
       <h2>
         Welcome brave soul... to the world of Vue.js
@@ -42,7 +42,8 @@ export default defineComponent({
       </div>
       
       <div v-if='profileVisible'>
-        <ProfileView />
+        <ProfileView 
+          @switchToLogin='toggleView'/>
       </div>
       
       <h3>
