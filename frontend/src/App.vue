@@ -2,7 +2,6 @@
 import { defineComponent } from 'vue';
 import WebsiteHeader from './components/Header.vue'
 import WebsiteFooter from './components/Footer.vue'
-import WebsiteLoginForm from './components/LoginForm.vue'
 /**
  * App component. You are welcome to modify this file.
  */
@@ -10,7 +9,6 @@ export default defineComponent({
   components: {
     WebsiteHeader,
     WebsiteFooter,
-    WebsiteLoginForm
   },
   data() {
     return {};
@@ -25,7 +23,7 @@ export default defineComponent({
       <h2>
         Welcome brave soul... to the world of Vue.js
       </h2>
-      <WebsiteLoginForm />
+      <router-view />
       <!--
       <p>
         In this challenge, you will need to implement a simple login page. I have full
