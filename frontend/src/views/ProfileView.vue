@@ -20,23 +20,15 @@ export default defineComponent ({
 </script>
 
 <template>
-  <div class='header-container'> 
-    <h1>Profile Page</h1>
-    <button 
-      @click='switchToLogin'> Go back to Login</button>
-  </div>
+  <h1>Profile Page</h1>
+  <button 
+    @click='switchToLogin'
+  >
+    Logout
+  </button>
 </template>
 
 <style scoped>
- .header-container {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 1rem;
-    border-bottom: 1px solid #e5e5e5;
-    width: 100%;
-    box-sizing: border-box;
-  }
+
 
 </style>

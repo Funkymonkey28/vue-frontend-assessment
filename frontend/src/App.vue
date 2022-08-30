@@ -1,9 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import WebsiteHeader from './components/Header.vue'
+import WebsiteHeader from './components/Header.vue';
 import WebsiteFooter from './components/Footer.vue'
-import WebsiteLoginForm from './components/LoginForm.vue'
 import ProfileView from './views/ProfileView.vue'
+import LoginView from './views/LoginView.vue';
 /**
  * App component. You are welcome to modify this file.
  */
@@ -11,8 +11,8 @@ export default defineComponent({
   components: {
     WebsiteHeader,
     WebsiteFooter,
-    WebsiteLoginForm,
     ProfileView,
+    LoginView
   },
   data() {
     return {
@@ -31,32 +31,19 @@ export default defineComponent({
 
 <template>
   <main>
-    <WebsiteHeader/>
+    <WebsiteHeader />
     <div class='home-body'>
-      <h2>
-        Welcome brave soul... to the world of Vue.js
-      </h2>
       <div v-if='loginVisible'>
-        <WebsiteLoginForm 
-          @switchToProfile='toggleView'/>
+        <LoginView 
+          @switchToProfile='toggleView'
+        />
       </div>
-      
       <div v-if='profileVisible'>
         <ProfileView 
-          @switchToLogin='toggleView'/>
+          @switchToLogin='toggleView'
+        />
       </div>
-      
-      <h3>
-        Link to challenge:
-        <a
-          href='https://github.com/Darianlmj/projects-frontend-assessment'
-          target='_blank'
-        >
-          projects-frontend-assessment
-        </a>
-      </h3>
     </div>
-    
     <WebsiteFooter />
   </main>
 </template>
