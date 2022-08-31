@@ -9,9 +9,6 @@ export default {
   },
   emits: [ 'switch-to-profile' ],
   methods: {
-    toggleView: function() {
-      this.$emit('switch-to-profile');
-    }
   }
 }
 </script>
@@ -22,9 +19,7 @@ export default {
       Welcome brave soul... to the world of Vue.js
     </h2>
     <div class='flex justify-center'>
-      <WebsiteLoginForm 
-        @switch-to-profile='toggleView'
-      />
+      <WebsiteLoginForm />
     </div>
 
     <div class='text-center'>

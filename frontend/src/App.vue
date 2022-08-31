@@ -21,10 +21,6 @@ export default defineComponent({
     };
   },
   methods: {
-    toggleView: function() {
-      this.profileVisible = !this.profileVisible;
-      this.loginVisible = !this.loginVisible;
-    }
   }
 });
 </script>

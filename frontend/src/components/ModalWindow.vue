@@ -41,6 +41,12 @@
           >
             Close
           </button>
+          <router-link
+            to='/profile'
+            class='underline'
+          > 
+            Continue to profile
+          </router-link>
         </footer>
       </div>
     </div>
