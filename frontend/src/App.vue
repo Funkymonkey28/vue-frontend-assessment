@@ -33,9 +33,6 @@ export default defineComponent({
   <main>
     <WebsiteHeader />
     <div class='home-body'>
-      <h1 class='font-bold underline'>
-        Hello
-      </h1>
       <div v-if='loginVisible'>
         <LoginView 
           @switch-to-profile='toggleView'
