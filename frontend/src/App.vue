@@ -30,7 +30,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class='bg-black h-screen pl-5 pr-5'>
+  <div class='bg-black h-screen pl-5 pr-5 overflow-auto'>
     <WebsiteHeader />
     <div class='home-body'>
       <div v-if='loginVisible'>
