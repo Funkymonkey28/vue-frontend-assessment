@@ -9,16 +9,7 @@ Bugs I encountered:
 
 Cypress
 - open using: npx cypress open
-- can't find it / can't find describe
-	-import '@types/jest'; into test file
-- can' find cy 
-	- run (either one or all of these. Can't remember. Probably the first one):
-		- npm install --save-dev webpack typescript ts-loader
-		- npm i -D @types/jest ts-jest jest
-		- npm i -D @types/mocha mocha
-	- add "types": ["cypress"] to the compilerOptions in tsconfig.json
-- can't find it / can't find describe / can' find cy 
-	- add 'plugin:cypress/recommended', to .eslintrc.js
+
 vue setup
 - npm install vue
 - npm install -g @vue/cli 
