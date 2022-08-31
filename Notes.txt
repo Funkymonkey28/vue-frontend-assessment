@@ -6,6 +6,7 @@ Bugs I encountered:
     inner divs. Otherwise only the outermost @click works
 - emits: [ 'switch-to-profile' ] <--- this needs to be included in the script to avoid the "event has been 
 	triggered but not decalred on 'emits' option" error. https://fjolt.com/article/vue-emit
+- overflow-auto <-- use this on the parent element that is being overflowed
 
 Cypress
 - open using: npx cypress open
