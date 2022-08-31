@@ -50,13 +50,15 @@ export default defineComponent({
     <input 
       v-model='email' 
       type='email' 
-      required/>
+      required
+    >
   
     <label>Password:</label>
     <input 
       v-model='password' 
       type='password'
-      required/>
+      required
+    >
       
     <div class='submit'>
       <button 
