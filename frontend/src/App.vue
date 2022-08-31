@@ -32,6 +32,9 @@ export default defineComponent({
 <template>
   <main>
     <WebsiteHeader />
+    <h1 class='underline font-bold bg-green-300'>
+      Tailwind check
+    </h1>
     <div class='home-body'>
       <div v-if='loginVisible'>
         <LoginView 

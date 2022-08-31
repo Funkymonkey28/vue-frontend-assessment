@@ -23,8 +23,13 @@ export default defineComponent ({
 
 <template>
   <div class='header-container'>
-    <a id='logo'>Pogjects</a>
-    <a>
+    <a 
+      id='logo' 
+      class='text-purple-600'
+    >
+      Pogjects
+    </a>
+    <a class='text-purple-600'>
       {{ changeText }}
     </a>
   </div>

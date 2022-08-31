@@ -63,6 +63,7 @@ export default defineComponent({
     <div class='submit'>
       <button 
         type='button'
+        class='bg-purple-400 p-2 mt-3 shadow-md'
         @click='login'
       >
         Login
