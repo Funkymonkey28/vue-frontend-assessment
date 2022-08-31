@@ -45,8 +45,15 @@ export default defineComponent({
 </script>
   
 <template>
-  <form id='formContainer'>
-    <label>Email:</label>
+  <div 
+    id='formContainer'
+    class='max-w-fit bg-white p-5 rounded-2xl'
+  >
+    <h3
+      class='text-gray-400 mb-2 text-left uppercase font-bold text-sm'
+    >
+      Email:
+    </h3>
     <input 
       id='email_input'
       v-model='email' 
@@ -54,7 +61,11 @@ export default defineComponent({
       required
     >
   
-    <label>Password:</label>
+    <h3
+      class='text-gray-400 mt-5 mb-2 text-left uppercase font-bold text-sm'
+    >
+      Password:
+    </h3>
     <input 
       id='password_input'
       v-model='password' 
@@ -62,16 +73,16 @@ export default defineComponent({
       required
     >
       
-    <div class='submit'>
+    <div class='text-center'>
       <button 
         type='button'
-        class='bg-purple-400 p-2 mt-3 shadow-md'
+        class='bg-violet-500 pt-2 pb-2 pr-4 pl-4 mt-3 shadow-md text-white rounded-full'
         @click='login'
       >
         Login
       </button>
     </div>
-  </form>
+  </div>
 
   <ModalWindowCustom
     v-show='modalVisible'
@@ -86,43 +97,3 @@ export default defineComponent({
     </template>
   </ModalWindowCustom>
 </template>
-  
-  <style>
-    form{
-      max-width: 420px;
-      margin: 30px auto;
-      background: rgb(255, 255, 255);
-      text-align: left;
-      padding: 40px;
-      border-radius: 10px;
-    }
-    label{
-      color: #aaa;
-      display: inline-block;
-      margin: 25px 0 15px;
-      font-size: 0.6em;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
-    input{
-      display: block;
-      padding: 10px 6px;
-      width: 100%;
-      box-sizing: border-box;
-      border: none;
-      border-bottom: 1px solid #ddd;
-      color: #555;
-    }
-    button{
-      background: #646cff;
-      border: 0;
-      padding: 10px 20px;
-      margin-top: 20px;
-      color: white;
-      border-radius: 20px;
-    }
-    .submit{
-      text-align: center;
-    }
-  </style>

@@ -30,11 +30,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <main>
+  <div class='bg-black h-screen pl-5 pr-5'>
     <WebsiteHeader />
-    <h1 class='underline font-bold bg-green-300'>
-      Tailwind check
-    </h1>
     <div class='home-body'>
       <div v-if='loginVisible'>
         <LoginView 
@@ -48,24 +45,5 @@ export default defineComponent({
       </div>
     </div>
     <WebsiteFooter />
-  </main>
+  </div>
 </template>
-
-<style scoped>
-  main {
-    padding: 0rem 3rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .home-body {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    background-color: #f5f5f5;
-  }
-</style>

@@ -18,26 +18,26 @@ export default {
 
 <template>
   <main>
-    <div class='home-body'>
-      <h2>
-        Welcome brave soul... to the world of Vue.js
-      </h2>
+    <h2 class='text-white text-center'>
+      Welcome brave soul... to the world of Vue.js
+    </h2>
+    <div class='flex justify-center'>
       <WebsiteLoginForm 
         @switch-to-profile='toggleView'
       />
-      <h3>
+    </div>
+
+    <div class='text-center'>
+      <h3 class='font-bold inline text-gray-300'>
         Link to challenge:
-        <a
-          href='https://github.com/Darianlmj/projects-frontend-assessment'
-          target='_blank'
-        >
-          projects-frontend-assessment
-        </a>
       </h3>
+      <a
+        href='https://github.com/Darianlmj/projects-frontend-assessment'
+        target='_blank'
+        class='text-violet-400'
+      >
+        projects-frontend-assessment
+      </a>
     </div>
   </main>
 </template>
-
-<style>
-
-</style>

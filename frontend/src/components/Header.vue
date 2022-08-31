@@ -22,34 +22,14 @@ export default defineComponent ({
 </script>
 
 <template>
-  <div class='header-container'>
+  <div class='flex justify-between p-5'>
     <a 
-      id='logo' 
-      class='text-purple-600'
+      class='text-violet-400 font-bold text-2xl'
     >
       Pogjects
     </a>
-    <a class='text-purple-600'>
+    <a class='text-violet-400'>
       {{ changeText }}
     </a>
   </div>
 </template>
-
-<style scoped>
-  .header-container {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 1rem;
-    border-bottom: 1px solid #e5e5e5;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  #logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-</style>

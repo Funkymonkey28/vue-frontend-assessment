@@ -16,22 +16,7 @@ export default defineComponent ({
 </script>
 
 <template>
-  <div class='footer-container'>
+  <div class='bg-white w-full text-center fixed left-0 bottom-0 h-5'>
     <a> {{ footerText }} </a>
   </div>
 </template>
-
-<style scoped>
-  .footer-container {
-    width: 100%;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: #fefefe;
-  }
-
-</style>
