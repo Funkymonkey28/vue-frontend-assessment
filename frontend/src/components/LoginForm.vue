@@ -48,6 +48,7 @@ export default defineComponent({
   <form id='formContainer'>
     <label>Email:</label>
     <input 
+      id='email_input'
       v-model='email' 
       type='email' 
       required
@@ -55,6 +56,7 @@ export default defineComponent({
   
     <label>Password:</label>
     <input 
+      id='password_input'
       v-model='password' 
       type='password'
       required
