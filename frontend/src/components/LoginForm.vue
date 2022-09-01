@@ -20,6 +20,7 @@ export default defineComponent({
   },
   methods: {
     async login() {
+      this.loginSuccess = false
       const response = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
         headers: {
@@ -42,7 +43,7 @@ export default defineComponent({
     modalToggle: function() {
       this.modalVisible = !this.modalVisible;
     },
-  }
+  },
 });
 </script>
   
