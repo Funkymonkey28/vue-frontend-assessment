@@ -34,6 +34,7 @@
             <!--Default Footer!-->
           </slot>
           <button
+            v-if='loginFail'
             type='button'
             class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full'
             aria-label='Close Modal'
@@ -42,6 +43,7 @@
             Close
           </button>
           <router-link
+            v-if='loginSucess'
             to='/profile'
             class='underline'
           > 
@@ -57,6 +59,12 @@
 export default {
   name: 'ModalWindow',
   emits: [ 'close' ],
+  data() {
+    return{
+      loginSucess: true,
+      loginFail: true
+    }
+  },
   methods: {
     close() {
       this.$emit('close');

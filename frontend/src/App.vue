@@ -2,8 +2,6 @@
 import { defineComponent } from 'vue';
 import WebsiteHeader from './components/Header.vue';
 import WebsiteFooter from './components/Footer.vue'
-//import ProfilePage from './views/ProfilePage.vue'
-//import LoginPage from './views/LoginPage.vue';
 /**
  * App component. You are welcome to modify this file.
  */
@@ -11,13 +9,9 @@ export default defineComponent({
   components: {
     WebsiteHeader,
     WebsiteFooter,
-    //ProfilePage,
-    //LoginPage
   },
   data() {
     return {
-      profileVisible: false,
-      loginVisible: true,
     };
   },
   methods: {
