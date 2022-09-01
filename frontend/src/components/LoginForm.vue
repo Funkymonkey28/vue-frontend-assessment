@@ -90,19 +90,19 @@ export default defineComponent({
     v-show='modalVisible'
     @close='modalToggle'
   >
-    <template #header>
-      Login Notice
-    </template>
-
     <template #body>
-      {{ message }}
+      <div
+        class='text-center text-lg font-serif'
+      >
+        {{ message }}
+      </div>
     </template>
 
     <template #footer>
       <router-link
         v-if='loginSuccess'
         to='/profile'
-        class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full text-center'
+        class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full text-center text-lg'
       > 
         Continue to profile
       </router-link>
