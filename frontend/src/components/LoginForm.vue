@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
-import ModalWindowCustom from './ModalWindow.vue';
+import ModalWindowCustom from './Modals/ModalWindow.vue';
 export default defineComponent({
   name: 'LoginForm',
   components: {

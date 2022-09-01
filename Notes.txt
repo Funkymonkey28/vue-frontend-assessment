@@ -21,6 +21,9 @@ routing
 - Resources:
 	- https://www.youtube.com/watch?v=jsvWGacIfSc&list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ&index=14&ab_channel=TheNetNinja
 
+Video manipulation:
+- https://stackoverflow.com/questions/49163182/how-to-bind-the-paused-attribute-of-video-element-in-vue-js-to-a-function-which
+- https://stackoverflow.com/questions/68084221/vue-js-video-processing-with-v-for-play-pause
 Replacing master branch with seotweaks
 git checkout seotweaks
 git merge -s ours master
