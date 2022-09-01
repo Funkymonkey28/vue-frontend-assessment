@@ -103,13 +103,13 @@ export default defineComponent({
         v-if='loginSuccess'
         class='text-center text-lg font-serif'
       >
-        Don't click the red button!!!
+        Don't click the red button!!! &#128556;
       </div>
       <div
         v-if='!loginSuccess'
         class='text-center text-lg font-serif'
       >
-        Good, turn back while you still can
+        Good, turn back while you still can &#128519;
       </div>
     </template>
 

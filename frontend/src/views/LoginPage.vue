@@ -18,7 +18,7 @@ export default {
     id='login-page-container'
   >
     <h2 class='text-white text-center mt-6 text-l'>
-      Welcome brave soul... What lays ahead is truly fearsome...
+      Welcome brave soul... Beware of what lays ahead... &#128561;
     </h2>
     <div class='flex justify-center mt-10'>
       <WebsiteLoginForm />

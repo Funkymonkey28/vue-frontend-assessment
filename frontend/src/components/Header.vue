@@ -26,7 +26,7 @@ export default defineComponent ({
     <a 
       class='text-violet-400 font-bold text-2xl'
     >
-      Don't use this Website
+      Don't use this Website &#128520;
     </a>
     <a class='text-violet-400'>
       {{ changeText }}
