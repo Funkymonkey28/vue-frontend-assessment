@@ -24,6 +24,19 @@ export default defineComponent ({
         Logout
       </router-link>
     </div>
+    <video
+      width='1280'
+      height='960'
+      controls
+      autoplay
+      class='text-white min-w-full min-h-full'
+    >
+      <source
+        src='../assets/video.mp4'
+        type='video/mp4'
+      >
+      Video is not supported
+    </video>
     <p
       class='text-white'
     >

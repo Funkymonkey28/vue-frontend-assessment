@@ -90,11 +90,26 @@ export default defineComponent({
     v-show='modalVisible'
     @close='modalToggle'
   >
-    <template #body>
+    <template #header>
       <div
-        class='text-center text-lg font-serif'
+        class='text-center text-lg font-serif font-bold'
       >
         {{ message }}
+      </div>
+    </template>
+
+    <template #body>
+      <div
+        v-if='loginSuccess'
+        class='text-center text-lg font-serif'
+      >
+        Don't click the red button!!!
+      </div>
+      <div
+        v-if='!loginSuccess'
+        class='text-center text-lg font-serif'
+      >
+        Good, turn back while you still can
       </div>
     </template>
 
@@ -102,9 +117,9 @@ export default defineComponent({
       <router-link
         v-if='loginSuccess'
         to='/profile'
-        class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full text-center text-lg'
+        class='bg-rose-600 p-1 mt-3 shadow-md text-white rounded-full text-center text-lg'
       > 
-        Continue to profile
+        Are you sure???
       </router-link>
     </template>
   </ModalWindowCustom>

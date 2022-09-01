@@ -26,7 +26,7 @@ export default defineComponent ({
     <a 
       class='text-violet-400 font-bold text-2xl'
     >
-      Pogjects
+      Don't use this Website
     </a>
     <a class='text-violet-400'>
       {{ changeText }}
