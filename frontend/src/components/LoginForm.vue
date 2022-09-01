@@ -13,6 +13,7 @@ export default defineComponent({
       email: '',
       password: '',
       message: '',
+      loginSuccess: false,
       dropdownResult: '',
       modalVisible: false,
     }
@@ -32,10 +33,11 @@ export default defineComponent({
       
       const data = await response.json();
       this.message = data.message;
-      this.modalVisible = true;
       if (data.status == 200){
+        this.loginSuccess=true;
         this.$emit('switch-to-profile');
       }
+      this.modalVisible = true;
     },
     modalToggle: function() {
       this.modalVisible = !this.modalVisible;
@@ -94,6 +96,16 @@ export default defineComponent({
 
     <template #body>
       {{ message }}
+    </template>
+
+    <template #footer>
+      <router-link
+        v-if='loginSuccess'
+        to='/profile'
+        class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full text-center'
+      > 
+        Continue to profile
+      </router-link>
     </template>
   </ModalWindowCustom>
 </template>

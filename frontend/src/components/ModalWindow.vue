@@ -31,24 +31,16 @@
 
         <footer class='flex flex-end flex-col'>
           <slot name='footer'>
-            <!--Default Footer!-->
+            <!--Default footer content-->
+            <button
+              type='button'
+              class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full'
+              aria-label='Close Modal'
+              @click='close'
+            >
+              Close
+            </button>
           </slot>
-          <button
-            v-if='loginFail'
-            type='button'
-            class='bg-violet-500 p-1 mt-3 shadow-md text-white rounded-full'
-            aria-label='Close Modal'
-            @click='close'
-          >
-            Close
-          </button>
-          <router-link
-            v-if='loginSucess'
-            to='/profile'
-            class='underline'
-          > 
-            Continue to profile
-          </router-link>
         </footer>
       </div>
     </div>
@@ -62,13 +54,15 @@ export default {
   data() {
     return{
       loginSucess: true,
-      loginFail: true
+      loginFail: true,
+      showCloseBtn: true,
+      stuff: null,
     }
   },
   methods: {
     close() {
       this.$emit('close');
     },
-  },
+  }
 };
 </script>
