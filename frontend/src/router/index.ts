@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import LoginPage from '../views/LoginPage.vue'
 import ProfilePage from '../views/ProfilePage.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/profile',
     name: 'userHome',
     component: ProfilePage
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: '404',
+    component: PageNotFound
   },
 ]
 

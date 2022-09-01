@@ -27,7 +27,7 @@ export default {
         Link to challenge:
       </h3>
       <a
-        href='https://github.com/Darianlmj/projects-frontend-assessment'
+        href='https://github.com/Funkymonkey28/vue-frontend-assessment'
         target='_blank'
         class='text-violet-400'
       >
