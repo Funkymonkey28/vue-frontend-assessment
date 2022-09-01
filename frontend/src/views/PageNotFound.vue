@@ -11,9 +11,3 @@
     Go back home
   </router-link>
 </template>
-
-<script lang="ts">
-export default {
-
-}
-</script>

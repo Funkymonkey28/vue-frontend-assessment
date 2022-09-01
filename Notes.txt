@@ -10,6 +10,7 @@ Bugs I encountered:
 
 Cypress
 - open using: npx cypress open
+- Resources: https://www.youtube.com/watch?v=avb-VDa3ZG4&ab_channel=LaithAcademy
 
 vue setup
 - npm install vue
